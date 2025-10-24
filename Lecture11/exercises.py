@@ -5,7 +5,9 @@ dna1 = "ACTGATCGATTACGTATAGTATTTGCTATCATACATATATATCGATGCGTTCAT"
 adenine_count = dna1.count("A")
 thymine_count = dna1.count("T")
 dna1_length = len(dna1)
-print(float((adenine_count + thymine_count)/dna1_length))
+dnadeci = float((adenine_count + thymine_count)/dna1_length)
+dnapercent = dnadeci*100
+print(dnapercent)
 
 #Q2
 dna2 = "ACTGATCGATTACGTATAGTATTTGCTATCATACATATATATCGATGCGTTCAT"
