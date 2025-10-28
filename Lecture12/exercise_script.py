@@ -13,4 +13,28 @@
 import os
 import sys
 
-with open("AJ")
+with open ("AJ223353_noheader.fasta") as AJ223352:
+    AJ223353_opened = AJ223353.read().upper()
+    AJ223353_onlyDNA = AJ223353_opened.replace("X","").replace("S","").replace("K","").replace("L","")
+    intron1 = AJ223353_onlyDNA[:29]
+    intron2 = AJ223353_onlyDNA[409:]
+    exon = AJ223353_onlyDNA[29:409]
+
+with open("AJintr.txt","w") as intr_AJ:
+    intr_AJ.write(intron1 + intron2)
+
+with open ("AJex.txt","w") as ex_AJ:
+    ex_AJ.write(exon)
+
+with open ("plain_genomic_seq.txt") as local_seq:
+    local_seq_opened = local_seq.read().upper()
+    local_seq_opened_onlyDNA = local_seq_opened.replace("X","").replace("S","").replace("K","").replace("L","")
+    exon1 = local_seq_opened_onlyDNA[:62]
+    exon2 = local_seq_opened_onlyDNA[90:]
+    intron = local_seq_opened_onlyDNA[62:90]
+
+with open("plain_genomic_seq_ex.txt","w") as ex_plain:
+    ex_plain.write(exon1 + exon2)
+
+with open ("plain_genomic_seq_intr.txt","w") as intr_plain:
+    intr_plain.write(intron)
