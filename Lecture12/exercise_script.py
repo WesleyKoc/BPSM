@@ -13,7 +13,7 @@
 import os
 import sys
 
-with open ("AJ223353_noheader.fasta") as AJ223352:
+with open ("AJ223353_noheader.fasta") as AJ223353:
     AJ223353_opened = AJ223353.read().upper()
     AJ223353_onlyDNA = AJ223353_opened.replace("X","").replace("S","").replace("K","").replace("L","")
     intron1 = AJ223353_onlyDNA[:29]
