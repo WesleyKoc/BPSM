@@ -72,10 +72,30 @@ data.close()
 
 #Neither CA nor TG get listed: they do appear twice each, but 2 is not more than 2....!
 
+seqin = input("Provide a sequence:").upper()
+try:
+    if any(base not in "ATGC" for base in seqin):
+        print("Give a valid DNA sequence")
+except:
+    pass
 
+pos_kmer_sizes = list(range(2,int(len(seqin)-1)))
 
+kmerfound_min = 3
 
-
+for window in pos_kmer_sizes:
+    kmersfound = []
+    kmerrange = list(range(0,len(seqin)))
+    for startbase in kmerrange:
+        if (startbase+window) < len(seqin)+1:
+            seqout = (seqin)[startbase:startbase+window]
+            kmersfound = kmersfound + [seqout]
+    nonredundantset = list(set(kmersfound))
+    for kmerfrequencies in nonredundantset   :
+       if kmersfound.count(kmerfrequencies) > kmerfound_min:
+           print("Lots! " + str(kmerfrequencies)+" "+str(kmersfound.count(kmerfrequencies)))
+       else   :
+           print(str(kmerfrequencies) + " " + str(kmersfound.count(kmerfrequencies)))
 
 
 #Exercise 3: Pairwise distances: how similar are two sequences?
