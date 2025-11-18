@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 import os
 
-ecoli = open("/localdisk/data/BPSM/Lecture19/ecoli.txt").read().replace('\n', '').upper()[0:50000]
+ecoli = open("/localdisk/data/BPSM/Lecture19/ecoli.txt").read().replace('\n', '').upper()
 
 window = 1000
 
@@ -17,7 +17,7 @@ plt.plot(at, label="AT contents of ecoli genome")
 plt.ylabel('AT content (%)')
 plt.xlabel('Position on genome')
 plt.legend()
-plt.savefig("e.coliATcontent50000bases.png",transparent=True)
+plt.savefig("e.coliATcontent.png",transparent=True)
 plt.show()
 
 
